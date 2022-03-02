@@ -6,17 +6,8 @@
  * @author      Allan Jardine (www.sprymedia.co.uk)
  * @contact     www.sprymedia.co.uk/contact
  *
- * @copyright Copyright 2008-2012 Allan Jardine, all rights reserved.
- *
  * This source file is free software, under either the GPL v2 license or a
- * BSD style license, available at:
- *   http://datatables.net/license_gpl2
- *   http://datatables.net/license_bsd
- *
- * This source file is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
- * or FITNESS FOR A PARTICULAR PURPOSE. See the license files for details.
- *
+
  * For details please refer to: http://www.datatables.net
  */
 
@@ -8195,23 +8186,7 @@
 		 */
 		"bJQueryUI": false,
 	
-	
-		/**
-		 * Allows the end user to select the size of a formatted page from a select
-		 * menu (sizes are 10, 25, 50 and 100). Requires pagination (`paginate`).
-		 *  @type boolean
-		 *  @default true
-		 *
-		 *  @dtopt Features
-		 *  @name DataTable.defaults.lengthChange
-		 * 
-		 *  @example
-		 *    $(document).ready( function () {
-		 *      $('#example').dataTable( {
-		 *        "lengthChange": false
-		 *      } );
-		 *    } );
-		 */
+	]
 		"bLengthChange": true,
 	
 	
@@ -9727,93 +9702,14 @@
 		 */
 		"sPaginationType": "two_button",
 	
-	
-		/**
-		 * Enable horizontal scrolling. When a table is too wide to fit into a certain
-		 * layout, or you have a large number of columns in the table, you can enable
-		 * x-scrolling to show the table in a viewport, which can be scrolled. This
-		 * property can be any CSS unit, or a number (in which case it will be treated
-		 * as a pixel measurement).
-		 *  @type string
-		 *  @default <i>blank string - i.e. disabled</i>
-		 *
-		 *  @dtopt Features
-		 *  @name DataTable.defaults.scrollX
-		 * 
-		 *  @example
-		 *    $(document).ready( function() {
-		 *      $('#example').dataTable( {
-		 *        "scrollX": "100%",
-		 *        "scrollCollapse": true
-		 *      } );
-		 *    } );
-		 */
 		"sScrollX": "",
-	
-	
-		/**
-		 * This property can be used to force a DataTable to use more width than it
-		 * might otherwise do when x-scrolling is enabled. For example if you have a
-		 * table which requires to be well spaced, this parameter is useful for
-		 * "over-sizing" the table, and thus forcing scrolling. This property can by
-		 * any CSS unit, or a number (in which case it will be treated as a pixel
-		 * measurement).
-		 *  @type string
-		 *  @default <i>blank string - i.e. disabled</i>
-		 *
-		 *  @dtopt Options
-		 *  @name DataTable.defaults.scrollXInner
-		 * 
-		 *  @example
-		 *    $(document).ready( function() {
-		 *      $('#example').dataTable( {
-		 *        "scrollX": "100%",
-		 *        "scrollXInner": "110%"
-		 *      } );
-		 *    } );
-		 */
+
 		"sScrollXInner": "",
 	
-	
-		/**
-		 * Enable vertical scrolling. Vertical scrolling will constrain the DataTable
-		 * to the given height, and enable scrolling for any data which overflows the
-		 * current viewport. This can be used as an alternative to paging to display
-		 * a lot of data in a small area (although paging and scrolling can both be
-		 * enabled at the same time). This property can be any CSS unit, or a number
-		 * (in which case it will be treated as a pixel measurement).
-		 *  @type string
-		 *  @default <i>blank string - i.e. disabled</i>
-		 *
-		 *  @dtopt Features
-		 *  @name DataTable.defaults.scrollY
-		 * 
-		 *  @example
-		 *    $(document).ready( function() {
-		 *      $('#example').dataTable( {
-		 *        "scrollY": "200px",
-		 *        "paginate": false
-		 *      } );
-		 *    } );
-		 */
 		"sScrollY": "",
 	
 	
-		/**
-		 * __Deprecated__ The functionality provided by this parameter has now been
-		 * superseded by that provided through `ajax`, which should be used instead.
-		 *
-		 * Set the HTTP method that is used to make the Ajax call for server-side
-		 * processing or Ajax sourced data.
-		 *  @type string
-		 *  @default GET
-		 *
-		 *  @dtopt Options
-		 *  @dtopt Server-side
-		 *  @name DataTable.defaults.serverMethod
-		 *
-		 *  @deprecated 1.10. Please use `ajax` for this functionality now.
-		 */
+	
 		"sServerMethod": "GET"
 	};
 	
@@ -9831,42 +9727,7 @@
 	 *  @namespace
 	 */
 	DataTable.defaults.column = {
-		/**
-		 * Allows a column's sorting to take multiple columns into account when 
-		 * doing a sort. For example first name / last name columns make sense to 
-		 * do a multi-column sort over the two columns.
-		 *  @type array
-		 *  @default null <i>Takes the value of the column index automatically</i>
-		 *
-		 *  @name DataTable.defaults.column.dataSort
-		 *  @dtopt Columns
-		 * 
-		 *  @example
-		 *    // Using `columnDefs`
-		 *    $(document).ready( function() {
-		 *      $('#example').dataTable( {
-		 *        "columnDefs": [
-		 *          { "dataSort": [ 0, 1 ], "targets": [ 0 ] },
-		 *          { "dataSort": [ 1, 0 ], "targets": [ 1 ] },
-		 *          { "dataSort": [ 2, 3, 4 ], "targets": [ 2 ] }
-		 *        ]
-		 *      } );
-		 *    } );
-		 *    
-		 *  @example
-		 *    // Using `columns`
-		 *    $(document).ready( function() {
-		 *      $('#example').dataTable( {
-		 *        "columns": [
-		 *          { "dataSort": [ 0, 1 ] },
-		 *          { "dataSort": [ 1, 0 ] },
-		 *          { "dataSort": [ 2, 3, 4 ] },
-		 *          null,
-		 *          null
-		 *        ]
-		 *      } );
-		 *    } );
-		 */
+		
 		"aDataSort": null,
 	
 	
@@ -10007,36 +9868,6 @@
 		 */
 		"bVisible": true,
 		
-		
-		/**
-		 * Developer definable function that is called whenever a cell is created (Ajax source,
-		 * etc) or processed for input (DOM source). This can be used as a compliment to mRender
-		 * allowing you to modify the DOM element (add background colour for example) when the
-		 * element is available.
-		 *  @type function
-		 *  @param {element} td The TD node that has been created
-		 *  @param {*} cellData The Data for the cell
-		 *  @param {array|object} rowData The data for the whole row
-		 *  @param {int} row The row index for the aoData data store
-		 *  @param {int} col The column index for aoColumns
-		 *
-		 *  @name DataTable.defaults.column.createdCell
-		 *  @dtopt Columns
-		 * 
-		 *  @example
-		 *    $(document).ready( function() {
-		 *      $('#example').dataTable( {
-		 *        "columnDefs": [ {
-		 *          "targets": [3],
-		 *          "createdCell": function (td, cellData, rowData, row, col) {
-		 *            if ( cellData == "1.7" ) {
-		 *              $(td).css('color', 'blue')
-		 *            }
-		 *          }
-		 *        } ]
-		 *      });
-		 *    } );
-		 */
 		"fnCreatedCell": null,
 	
 	
@@ -10444,46 +10275,7 @@
 		"sContentPadding": "",
 	
 	
-		/**
-		 * Allows a default value to be given for a column's data, and will be used
-		 * whenever a null data source is encountered (this can be because `data`
-		 * is set to null, or because the data source itself is null).
-		 *  @type string
-		 *  @default null
-		 *
-		 *  @name DataTable.defaults.column.defaultContent
-		 *  @dtopt Columns
-		 * 
-		 *  @example
-		 *    // Using `columnDefs`
-		 *    $(document).ready( function() {
-		 *      $('#example').dataTable( {
-		 *        "columnDefs": [ 
-		 *          {
-		 *            "data": null,
-		 *            "defaultContent": "Edit",
-		 *            "targets": [ -1 ]
-		 *          }
-		 *        ]
-		 *      } );
-		 *    } );
-		 *    
-		 *  @example
-		 *    // Using `columns`
-		 *    $(document).ready( function() {
-		 *      $('#example').dataTable( {
-		 *        "columns": [ 
-		 *          null,
-		 *          null,
-		 *          null,
-		 *          {
-		 *            "data": null,
-		 *            "defaultContent": "Edit"
-		 *          }
-		 *        ]
-		 *      } );
-		 *    } );
-		 */
+		/
 		"sDefaultContent": null,
 	
 	
@@ -11907,9 +11699,6 @@
 					iStartButton = iCurrentPage - Math.ceil(iPageCount / 2) + 1;
 					iEndButton = iStartButton + iPageCount - 1;
 				}
-	
-				
-				/* Build the dynamic list */
 				for ( i=iStartButton ; i<=iEndButton ; i++ )
 				{
 					sList += (iCurrentPage !== i) ?
